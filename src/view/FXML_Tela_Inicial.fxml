@@ -1,0 +1,659 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.SplitPane?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.input.KeyCodeCombination?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<VBox prefHeight="678.0" prefWidth="1300.0" style="-fx-background-color: gray;" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.FXML_Tela_InicialController">
+   <children>
+      <AnchorPane fx:id="paneExterno" prefHeight="656.0" prefWidth="1300.0" style="-fx-background-color: gray;">
+         <children>
+              <AnchorPane fx:id="paneInterno" onMouseExited="#centralizarPanelInterno" prefHeight="666.0" prefWidth="1200.0" style="-fx-background-color: gray;" AnchorPane.bottomAnchor="-11.0" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="20.0" AnchorPane.topAnchor="0.0">
+                  <children>
+                  <Pane prefHeight="636.0" prefWidth="1254.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                     <children>
+                        <HBox prefHeight="55.0" prefWidth="927.0">
+                           <opaqueInsets>
+                              <Insets />
+                           </opaqueInsets>
+                           <padding>
+                              <Insets top="15.0" />
+                           </padding>
+                        </HBox>
+                        <Label fx:id="labelNomeEmpresaInterno" alignment="CENTER" layoutX="917.0" layoutY="14.0" prefHeight="40.0" prefWidth="329.0" style="-fx-font-weight: bold; -fx-font-size: 30;" textFill="#ffffffcc" />
+                        <MenuBar layoutX="1056.0" layoutY="14.0" visible="false">
+                          <menus>
+                            <Menu mnemonicParsing="false" text="AlteraTelas">
+                              <items>
+                                <MenuItem mnemonicParsing="false" onAction="#exibirAbaVenda" text="Vendas">
+                                       <accelerator>
+                                          <KeyCodeCombination alt="UP" code="F2" control="DOWN" meta="UP" shift="UP" shortcut="UP" />
+                                       </accelerator>
+                                    </MenuItem>
+                                    <MenuItem mnemonicParsing="false" onAction="#exibirAbaProduto" text="Produtos">
+                                       <accelerator>
+                                          <KeyCodeCombination alt="UP" code="F3" control="DOWN" meta="UP" shift="UP" shortcut="UP" />
+                                       </accelerator>
+                                    </MenuItem>
+                                    <MenuItem mnemonicParsing="false" onAction="#exibirAbaCliente" text="Clientes">
+                                       <accelerator>
+                                          <KeyCodeCombination alt="UP" code="F4" control="DOWN" meta="UP" shift="UP" shortcut="UP" />
+                                       </accelerator>
+                                    </MenuItem>
+                                    <MenuItem mnemonicParsing="false" onAction="#trocarAbas" text="TrocarAba">
+                                       <accelerator>
+                                          <KeyCodeCombination alt="UP" code="F1" control="DOWN" meta="UP" shift="UP" shortcut="UP" />
+                                       </accelerator>
+                                    </MenuItem>
+                                    <MenuItem mnemonicParsing="false" onAction="#exibirAbaConfig" text="Config">
+                                       <accelerator>
+                                          <KeyCodeCombination alt="UP" code="F5" control="DOWN" meta="UP" shift="UP" shortcut="UP" />
+                                       </accelerator>
+                                    </MenuItem>
+                              </items>
+                            </Menu>
+                            <Menu mnemonicParsing="false" text="Utilitarios">
+                              <items>
+                                    <MenuItem mnemonicParsing="false" onAction="#exibirAbaPagarDebito" text="PagarDebito">
+                                       <accelerator>
+                                          <KeyCodeCombination alt="UP" code="O" control="DOWN" meta="UP" shift="UP" shortcut="UP" />
+                                       </accelerator>
+                                    </MenuItem>
+                                <MenuItem mnemonicParsing="false" onAction="#chamaSalvarParaCadastrarProduto" text="CadastrarProduto">
+                                       <accelerator>
+                                          <KeyCodeCombination alt="UP" code="P" control="DOWN" meta="UP" shift="UP" shortcut="UP" />
+                                       </accelerator></MenuItem>
+                                    <MenuItem mnemonicParsing="false" onAction="#chamaSalvarParaCadastrarCliente" text="CadastrarCliente">
+                                       <accelerator>
+                                          <KeyCodeCombination alt="UP" code="L" control="DOWN" meta="UP" shift="UP" shortcut="UP" />
+                                       </accelerator>
+                                    </MenuItem>
+                                    <MenuItem mnemonicParsing="false" onAction="#vender" text="Vender">
+                                       <accelerator>
+                                          <KeyCodeCombination alt="UP" code="E" control="DOWN" meta="UP" shift="UP" shortcut="UP" />
+                                       </accelerator>
+                                    </MenuItem>
+                              </items>
+                            </Menu>
+                          </menus>
+                        </MenuBar>
+                     </children>
+                  </Pane> 
+                      <TabPane fx:id="TabGeral" layoutX="3.0" layoutY="78.0" prefHeight="588.0" prefWidth="1067.0" tabClosingPolicy="UNAVAILABLE" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="2.0" AnchorPane.rightAnchor="2.0" AnchorPane.topAnchor="77.0">
+                          <tabs>
+                              <Tab fx:id="AbaVenda" text="Vendas">
+                                  <content>
+                                      <AnchorPane fx:id="anchorVendas" minHeight="0.0" minWidth="0.0" prefHeight="520.0" prefWidth="1500.0">
+                                          <children>
+                                    <HBox fx:id="hBoxVendas" layoutX="1.0" layoutY="-3.0" prefHeight="558.0" prefWidth="1500.0">
+                                       <children>
+                                          <SplitPane fx:id="splitPane" dividerPositions="0.58" prefHeight="558.0" prefWidth="1318.0">
+                                            <items>
+                                              <AnchorPane fx:id="splitLeft" focusTraversable="true" minHeight="0.0" minWidth="0.0" prefHeight="556.0" prefWidth="750.0">
+                                                   <children>
+                                                      <Pane layoutX="25.0" layoutY="4.0" prefHeight="548.0" prefWidth="707.0">
+                                                         <children>
+                                                                      <Label layoutX="6.0" layoutY="14.0" text="Pesquisar Porduto:" />
+                                                                      <TextField fx:id="TexPesqProdt" layoutX="6.0" layoutY="33.0" prefHeight="29.0" prefWidth="578.0" promptText="Digite o nome do produto..." />
+                                                                      <Button fx:id="BPesqVend" layoutX="596.0" layoutY="32.0" mnemonicParsing="false" onAction="#inicializarTabelaPesquisaProduto" prefHeight="29.0" prefWidth="85.0" text="Pesquisar " />
+                                                                      <Label layoutX="6.0" layoutY="78.0" text="Resultado Pesquisa:" />
+                                                                      <TableView fx:id="TabPesquisaVenda" layoutX="7.0" layoutY="98.0" prefHeight="118.0" prefWidth="578.0">
+                                                                          <columns>
+                                                                              <TableColumn fx:id="colProduto" editable="false" prefWidth="157.00003051757812" sortable="false" text="Produto" />
+                                                                  <TableColumn fx:id="colMarca" editable="false" prefWidth="121.0" sortable="false" text="Marca" />
+                                                                              <TableColumn fx:id="colValorUnidade" editable="false" minWidth="0.0" prefWidth="123.0" sortable="false" text="Valor Unidade" />
+                                                                  <TableColumn fx:id="colQuantidade" editable="false" minWidth="0.0" prefWidth="89.0" sortable="false" text="Disponível" />
+                                                                              <TableColumn fx:id="colCodigo" editable="false" prefWidth="87.99996948242188" sortable="false" text="Codigo" />
+                                                                          </columns>
+                                                                      </TableView>
+                                                                      <Label layoutX="7.0" layoutY="266.0" text="Porduto(s) Adicionado(s):" />
+                                                            <ComboBox fx:id="comboBoxQuantidade" layoutX="599.0" layoutY="98.0" prefHeight="26.0" prefWidth="80.0" promptText="Quantidade" />
+                                                            <HBox layoutX="7.0" layoutY="223.0" prefHeight="40.0" prefWidth="239.0">
+                                                               <children>
+                                                                            <Button fx:id="BAdiconarVend" mnemonicParsing="false" onAction="#metodoAuxiliarPegaProdutoAndAdiconaToVenda" prefHeight="30.0" prefWidth="111.0" text="Adicionar">
+                                                                     <HBox.margin>
+                                                                        <Insets right="10.0" />
+                                                                     </HBox.margin>
+                                                                  </Button>
+                                                                            <Button fx:id="BLImparVend" mnemonicParsing="false" onAction="#limpaTabelaPesquisaProdutoParaVenda" prefHeight="30.0" prefWidth="111.0" text="Limpar" />
+                                                               </children>
+                                                            </HBox>
+                                                                      <TableView fx:id="TabAdiVend" layoutX="7.0" layoutY="287.0" prefHeight="200.0" prefWidth="580.0">
+                                                                          <columns>
+                                                                              <TableColumn fx:id="colProdutoVendaAdiciona" prefWidth="141.0" text="Produto" />
+                                                                              <TableColumn fx:id="colQuantidadeVendaAdiciona" prefWidth="111.0" text="Quantidade" />
+                                                                              <TableColumn fx:id="colValorUnidadeVendaAdiciona" prefWidth="132.0" text="Valor Unidade" />
+                                                                              <TableColumn fx:id="colTotalVendaAdiciona" prefWidth="111.0" text="Total" />
+                                                                              <TableColumn fx:id="colCodigoVendaAdiciona" prefWidth="84.0" text="Codigo" />
+                                                                          </columns>
+                                                                      </TableView>
+                                                            <Label layoutX="596.0" layoutY="79.0" text="Quantidade" />
+                                                            <HBox layoutX="9.0" layoutY="497.0" prefHeight="55.0" prefWidth="499.0">
+                                                               <children>
+                                                                            <Button fx:id="BVenderVend" mnemonicParsing="false" onAction="#vender" prefHeight="47.0" prefWidth="111.0" text="Vender">
+                                                                     <HBox.margin>
+                                                                        <Insets right="10.0" />
+                                                                     </HBox.margin>
+                                                                  </Button>
+                                                                            <Button fx:id="BCancelarVend" mnemonicParsing="false" onAction="#cancelaVenda" prefHeight="47.0" prefWidth="111.0" text="Cancelar">
+                                                                     <HBox.margin>
+                                                                        <Insets right="10.0" />
+                                                                     </HBox.margin>
+                                                                  </Button>
+                                                                            <Button fx:id="BRemItemVend" mnemonicParsing="false" onAction="#auxiliarRemoverItemVenda" prefHeight="47.0" prefWidth="111.0" text="Remover Item">
+                                                                     <HBox.margin>
+                                                                        <Insets right="10.0" />
+                                                                     </HBox.margin>
+                                                                  </Button>
+                                                               </children>
+                                                            </HBox>
+                                                         </children>
+                                                      </Pane>
+                                                   </children>
+                                                </AnchorPane>
+                                              <AnchorPane fx:id="splitRight" minHeight="0.0" minWidth="0.0" prefHeight="556.0" prefWidth="500.0">
+                                                   <children>
+                                                      <Pane fx:id="paneRight" layoutX="37.0" layoutY="6.0" prefHeight="544.0" prefWidth="469.0" AnchorPane.leftAnchor="37.0" AnchorPane.rightAnchor="43.0">
+                                                         <children>
+                                                            <VBox layoutX="15.0" layoutY="14.0" prefHeight="70.0" prefWidth="449.0">
+                                                               <children>
+                                                                  <Label text="Selecionar Cliente:" />
+                                                                  <HBox prefHeight="29.0" prefWidth="339.0">
+                                                                     <children>
+                                                                        <TextField fx:id="textFieldPesquisaClienteParaConfirmar" prefHeight="26.0" prefWidth="323.0" promptText="Digite o nome do Cliente..." />
+                                                                        <Button fx:id="buttonConfirmaCliente" mnemonicParsing="false" onAction="#confirmarCliente" prefHeight="26.0" prefWidth="96.0" text="Confirmar">
+                                                                           <HBox.margin>
+                                                                              <Insets left="5.0" />
+                                                                           </HBox.margin>
+                                                                        </Button>
+                                                                     </children>
+                                                                  </HBox>
+                                                               </children>
+                                                            </VBox>
+                                                            <VBox layoutX="14.0" layoutY="76.0" prefHeight="151.0" prefWidth="161.0">
+                                                               <children>
+                                                                  <Label text="Forma de Pagamento" />
+                                                                  <ComboBox fx:id="comboBoxFormaPagamento" prefWidth="150.0">
+                                                                     <VBox.margin>
+                                                                        <Insets bottom="30.0" top="5.0" />
+                                                                     </VBox.margin>
+                                                                  </ComboBox>
+                                                                  <Label fx:id="labelNumeroParcelas" text="Número de Parcelas" />
+                                                                  <ComboBox fx:id="comboBoxNumeroParcelas" editable="true" prefWidth="150.0" promptText="Parcelas">
+                                                                     <VBox.margin>
+                                                                        <Insets top="5.0" />
+                                                                     </VBox.margin>
+                                                                  </ComboBox>
+                                                               </children>
+                                                            </VBox>
+                                                            <HBox layoutX="14.0" layoutY="216.0" prefHeight="193.0" prefWidth="184.0">
+                                                               <children>
+                                                                  <VBox prefHeight="100.0" prefWidth="157.0">
+                                                                     <children>
+                                                                                  <Label text="Total (R$):" />
+                                                                                  <TextField fx:id="TexTotVend" prefHeight="55.0" prefWidth="148.0">
+                                                                                      <font>
+                                                                                          <Font size="21.0" />
+                                                                                      </font>
+                                                                           <VBox.margin>
+                                                                              <Insets bottom="20.0" />
+                                                                           </VBox.margin>
+                                                                                  </TextField>
+                                                                        <VBox prefHeight="100.0" prefWidth="180.0">
+                                                                           <children>
+                                                                                        <Label text="Desconto (R$):" />
+                                                                                        <TextField fx:id="TexDescVend" prefHeight="55.0" prefWidth="162.0" promptText="Valor do desconto">
+                                                                                            <font>
+                                                                                                <Font size="21.0" />
+                                                                                            </font>
+                                                                                 <VBox.margin>
+                                                                                    <Insets />
+                                                                                 </VBox.margin>
+                                                                                        </TextField>
+                                                                           </children>
+                                                                        </VBox>
+                                                                     </children>
+                                                                  </VBox>
+                                                               </children>
+                                                            </HBox>
+                                                            <VBox layoutX="283.0" layoutY="126.0" prefHeight="271.0" prefWidth="159.0">
+                                                               <children>
+                                                                            <Label text="A pagar (R$):" />
+                                                                            <TextField fx:id="TextPagVend" prefHeight="55.0" prefWidth="162.0">
+                                                                                <font>
+                                                                                    <Font name="System Bold" size="21.0" />
+                                                                                </font>
+                                                                     <VBox.margin>
+                                                                        <Insets bottom="20.0" />
+                                                                     </VBox.margin>
+                                                                            </TextField>
+                                                                  <Label text="Valor Recebido (R$):" />
+                                                                  <TextField fx:id="TextRecebidoVend" prefHeight="55.0" prefWidth="162.0" promptText="Valor Recebido">
+                                                                     <font>
+                                                                        <Font name="System Bold" size="21.0" />
+                                                                     </font>
+                                                                     <VBox.margin>
+                                                                        <Insets bottom="20.0" />
+                                                                     </VBox.margin>
+                                                                  </TextField>
+                                                                  <Label text="Troco (R$):" />
+                                                                  <TextField fx:id="TextTrocoVend" prefHeight="55.0" prefWidth="162.0">
+                                                                     <font>
+                                                                        <Font name="System Bold" size="21.0" />
+                                                                     </font>
+                                                                  </TextField>
+                                                               </children>
+                                                            </VBox>
+                                                            <HBox layoutX="15.0" layoutY="397.0" prefHeight="44.0" prefWidth="301.0">
+                                                               <children>
+                                                                  <Button fx:id="buttonFinalizarVenda" mnemonicParsing="false" onAction="#finalizarVenda" prefHeight="50.0" prefWidth="150.0" text="Finalizar Venda" />
+                                                                  <Button fx:id="buttonCancelarVenda" mnemonicParsing="false" onAction="#cancelar" prefHeight="50.0" prefWidth="111.0" text="Cancelar">
+                                                                     <HBox.margin>
+                                                                        <Insets left="20.0" />
+                                                                     </HBox.margin>
+                                                                  </Button>
+                                                               </children>
+                                                            </HBox>
+                                                         </children>
+                                                      </Pane>
+                                                   </children>
+                                                </AnchorPane>
+                                            </items>
+                                             <HBox.margin>
+                                                <Insets />
+                                             </HBox.margin>
+                                          </SplitPane>
+                                       </children></HBox>
+                                          </children>
+                                      </AnchorPane>
+                                  </content>
+                              </Tab>
+                              <Tab fx:id="AbaProdutos" text="Produtos">
+                           <content>
+                              <SplitPane prefHeight="200.0" prefWidth="200.0">
+                                 <items>
+                                            <AnchorPane fx:id="abaProduto" minHeight="0.0" minWidth="0.0" prefHeight="483.0" prefWidth="1165.0">
+                                       <children>
+                                          <TextField fx:id="textFildpesquisaProduto" layoutX="39.0" layoutY="55.0" prefHeight="29.0" prefWidth="457.0" promptText="Digite o nome do produto..." />
+                                          <Button fx:id="botaoPesquisaProduto" layoutX="517.0" layoutY="55.0" mnemonicParsing="false" onAction="#inicializarTabelaProduto" text="Pesquisar" />
+                                          <TableView fx:id="tabelaPesquisaProduto" layoutX="39.0" layoutY="119.0" prefHeight="200.0" prefWidth="956.0">
+                                             <columns>
+                                                <TableColumn fx:id="colProdutoProduto" prefWidth="281.0" text="Produto" />
+                                                <TableColumn fx:id="colProdutoFornecedor" minWidth="9.0" prefWidth="218.0" text="Fornecedor" />
+                                                <TableColumn fx:id="colProdutoMarca" prefWidth="139.0" text="Marca" />
+                                                <TableColumn fx:id="colProdutoQuantidade" prefWidth="58.0" text="Quantidade" />
+                                                <TableColumn fx:id="colProdutoValorCusto" minWidth="0.0" prefWidth="84.0" text="Valor Custo" />
+                                                <TableColumn fx:id="colProdutoValorVenda" minWidth="0.0" prefWidth="98.666748046875" text="ValorVenda" />
+                                                <TableColumn fx:id="colProdutoCod" prefWidth="75.0" text="Cod." />
+                                             </columns>
+                                          </TableView>
+                                          <HBox layoutX="39.0" layoutY="353.0" prefHeight="55.0" prefWidth="483.0" spacing="10.0">
+                                             <children>
+                                                <Button fx:id="botaoCadastraProduto" layoutX="32.0" layoutY="351.0" mnemonicParsing="false" onAction="#chamaSalvarParaCadastrarProduto" prefHeight="47.0" prefWidth="111.0" text="Cadastrar" />
+                                                <Button fx:id="botaoEditarProduto" layoutX="207.0" layoutY="351.0" mnemonicParsing="false" onAction="#editarCadastroProduto" prefHeight="47.0" prefWidth="111.0" text="Editar">
+                                                   <HBox.margin>
+                                                      <Insets />
+                                                   </HBox.margin>
+                                                </Button>
+                                                <Button fx:id="botaoRemoverProduto" layoutX="120.0" layoutY="351.0" mnemonicParsing="false" onAction="#apagarCadastroProduto" prefHeight="47.0" prefWidth="111.0" text="Remover" />
+                                                <Button fx:id="botaoFecharProduto" layoutX="275.0" layoutY="351.0" mnemonicParsing="false" onAction="#fecharAbaProduto" prefHeight="47.0" prefWidth="111.0" text="Fechar" />
+                                             </children>
+                                          </HBox>
+                                          <Label layoutX="39.0" layoutY="100.0" text="Tabela produto:" />
+                                          <Label layoutX="39.0" layoutY="36.0" text="Pesquisar produto:" />
+                                       </children>
+                                    </AnchorPane>
+                                 </items>
+                              </SplitPane>
+                           </content>
+                              </Tab>
+                        <Tab fx:id="AbaCadastrarProduto" text="Cadastrar Produto">
+                           <content>
+                              <SplitPane prefHeight="200.0" prefWidth="200.0">
+                                 <items>
+                                    <AnchorPane fx:id="abaCadastroProduto" minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                                       <children>
+                                          <Label layoutX="38.0" layoutY="33.0" text="Produto:" />
+                                          <Label layoutX="445.0" layoutY="33.0" text="Fornecedor:" />
+                                          <Label layoutX="38.0" layoutY="98.0" text="Marca:" />
+                                          <Label layoutX="444.0" layoutY="96.0" text="Quantidade:" />
+                                          <Label layoutX="42.0" layoutY="158.0" text="Valor Custo:" />
+                                          <Label layoutX="237.0" layoutY="158.0" text="Valor Venda:" />
+                                          <TextField fx:id="textFieldcadastroProduto" layoutX="38.0" layoutY="52.0" prefHeight="29.0" prefWidth="371.0" promptText="Nome do Produto" />
+                                          <TextField fx:id="textFieldcadastroProdutoFornecedor" layoutX="444.0" layoutY="52.0" prefHeight="29.0" prefWidth="315.0" promptText="Fornecedor" />
+                                          <TextField fx:id="textFieldcadastroProdutoMarca" layoutX="38.0" layoutY="117.0" prefHeight="29.0" prefWidth="369.0" promptText="Marca do Produto" />
+                                          <TextField fx:id="textFieldcadastroProdutoQuantidade" layoutX="444.0" layoutY="115.0" prefHeight="29.0" prefWidth="171.0" promptText="Quantidade Disponivel" />
+                                          <TextField fx:id="textFieldcadastroProdutoValorCusto" layoutX="42.0" layoutY="177.0" prefHeight="29.0" prefWidth="171.0" promptText="Valor de Custo" />
+                                          <TextField fx:id="textFieldcadastroProdutoValorVenda" layoutX="237.0" layoutY="177.0" prefHeight="29.0" prefWidth="171.0" promptText="Valor de Venda" />
+                                          <HBox layoutX="38.0" layoutY="241.0" prefHeight="55.0" prefWidth="370.0" spacing="10.0">
+                                             <children>
+                                                <Button fx:id="botaoSalvarCadastroProduto" layoutX="39.0" layoutY="270.0" mnemonicParsing="false" onAction="#escolheMetodoSalvarOuEditarProduto" prefHeight="47.0" prefWidth="111.0" text="Salvar" />
+                                                <Button fx:id="botaoCancelarCadastroProduto" layoutX="117.0" layoutY="270.0" mnemonicParsing="false" onAction="#cancelaCadastroProduto" prefHeight="47.0" prefWidth="111.0" text="Cancelar" />
+                                                <Button fx:id="botaoLImparCadastroProduto" layoutX="200.0" layoutY="270.0" mnemonicParsing="false" onAction="#limpaDadosdaTelaCadastroProduto" prefHeight="47.0" prefWidth="111.0" text="Limpar" />
+                                             </children>
+                                          </HBox>
+                                       </children>
+                                    </AnchorPane>
+                                 </items>
+                              </SplitPane>
+                           </content>
+                        </Tab>
+                              <Tab fx:id="AbaClientes" text="Clientes">
+                           <content>
+                              <SplitPane prefHeight="200.0" prefWidth="200.0">
+                                 <items>
+                                            <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                                       <children>
+                                          <Button fx:id="botaoPesquisaCliente" layoutX="635.0" layoutY="51.0" mnemonicParsing="false" onAction="#inicializarTabelaCliente" prefHeight="29.0" text="Pesquisar" />
+                                          <Label layoutX="39.0" layoutY="114.0" text="Tabela clientes:" />
+                                          <TableView fx:id="tabelaPesquisaCliente" layoutX="39.0" layoutY="133.0" prefHeight="264.0" prefWidth="765.0">
+                                             <columns>
+                                                <TableColumn fx:id="colClienteNome" prefWidth="175.0" text="Nome" />
+                                                <TableColumn fx:id="colClienteCPF" minWidth="0.0" prefWidth="126.0" text="CPF" />
+                                                <TableColumn fx:id="colClienteRG" prefWidth="121.0" text="RG" />
+                                                <TableColumn fx:id="colClienteCelular" minWidth="3.0" prefWidth="100.0" text="Celular" />
+                                                <TableColumn fx:id="colClienteDaraNascimento" prefWidth="166.0" text="Data de Nascmento" />
+                                                <TableColumn fx:id="colClienteCod" prefWidth="75.0" text="Codigo" />
+                                             </columns>
+                                          </TableView>
+                                          <HBox layoutX="38.0" layoutY="431.0" prefHeight="49.0" prefWidth="828.0" spacing="10.0">
+                                             <children>
+                                                <Button fx:id="botaoCadastraCliente" layoutX="32.0" layoutY="351.0" mnemonicParsing="false" onAction="#chamaSalvarParaCadastrarCliente" prefHeight="44.0" prefWidth="145.0" text="Cadastrar" />
+                                                <Button fx:id="botaoEditarCliente" layoutX="120.0" layoutY="351.0" mnemonicParsing="false" onAction="#editarCadastroCliente" prefHeight="44.0" prefWidth="145.0" text="Editar" />
+                                                <Button fx:id="botaoPagarDebitoCliente" layoutX="207.0" layoutY="351.0" mnemonicParsing="false" onAction="#chamarPagarDebitoPelaTelaClientes" prefHeight="44.0" prefWidth="145.0" text="Pagar Debito">
+                                                   <HBox.margin>
+                                                      <Insets />
+                                                   </HBox.margin>
+                                                </Button>
+                                                <Button fx:id="botaoRemoverCliente" layoutX="275.0" layoutY="351.0" mnemonicParsing="false" onAction="#apagarCadastroCliente" prefHeight="44.0" prefWidth="145.0" text="Remover Cliente" />
+                                                <Button fx:id="botaoFecharAbaCliente" mnemonicParsing="false" onAction="#fecharAbaCliente" prefHeight="44.0" prefWidth="145.0" text="Fechar" />
+                                             </children>
+                                             <padding>
+                                                <Insets right="10.0" />
+                                             </padding>
+                                          </HBox>
+                                          <Label layoutX="38.0" layoutY="33.0" text="Pesquisar cliente:" />
+                                          <TextField fx:id="textFildpesquisaCliente" layoutX="38.0" layoutY="52.0" prefHeight="29.0" prefWidth="578.0" promptText="Digite o nome do cliente..." />
+                                       </children>
+                                    </AnchorPane>
+                                 </items>
+                              </SplitPane>
+                           </content>
+                              </Tab>
+                        <Tab fx:id="AbaCadastrarCliente" text="Cadastrar Cliente">
+                           <content>
+                              <SplitPane prefHeight="200.0" prefWidth="200.0">
+                                 <items>
+                                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                                       <children>
+                                          <TextField fx:id="textFieldcadastroClienteNome" layoutX="41.0" layoutY="65.0" prefHeight="29.0" prefWidth="566.0" promptText="Nome do Cliente" />
+                                          <Pane layoutX="40.0" layoutY="123.0" prefHeight="73.0" prefWidth="568.0" style="-fx-border-color: black;">
+                                             <children>
+                                                <TextField fx:id="textFieldCadastroClienteRG" layoutX="10.0" layoutY="29.0" promptText="RG" />
+                                                <Label layoutX="10.0" layoutY="10.0" text="RG:" />
+                                                <Label layoutX="199.0" layoutY="10.0" text="CPF:" />
+                                                <TextField fx:id="textFieldcadastroClienteCPF" layoutX="199.0" layoutY="29.0" onKeyReleased="#tfCPFKeyReleased" promptText="CPF" />
+                                                <TextField fx:id="textFieldcadastroClienteDataNascimento" layoutX="384.0" layoutY="29.0" onKeyReleased="#tfNascimentoKeyReleased" promptText="Data de Nascimento" />
+                                                <Label layoutX="384.0" layoutY="10.0" text="Data de Nascimento:" />
+                                             </children>
+                                          </Pane>
+                                          <Label layoutX="41.0" layoutY="40.0" text="Nome:" />
+                                          <Pane layoutX="40.0" layoutY="226.0" prefHeight="73.0" prefWidth="568.0" style="-fx-border-color: black;">
+                                             <children>
+                                                <Label layoutX="10.0" layoutY="10.0" text="Numero de Contato:" />
+                                                <TextField fx:id="textFieldcadastroClienteNumeroContato" layoutX="10.0" layoutY="29.0" promptText="Numero de Contato" />
+                                                <TextField fx:id="textFieldcadastroClienteEmail" layoutX="199.0" layoutY="29.0" promptText="E-mail" />
+                                                <Label layoutX="199.0" layoutY="10.0" text="E-mail:" />
+                                             </children>
+                                          </Pane>
+                                          <Pane layoutX="40.0" layoutY="337.0" prefHeight="121.0" prefWidth="568.0" style="-fx-border-color: black;">
+                                             <children>
+                                                <TextField fx:id="textFieldcadastroClienteEnderecoRua" layoutX="10.0" layoutY="29.0" prefHeight="25.0" prefWidth="339.0" promptText="Rua" />
+                                                <Label layoutX="10.0" layoutY="10.0" text="Rua:" />
+                                                <Label layoutX="384.0" layoutY="10.0" text="Número:" />
+                                                <TextField fx:id="textFieldcadastroClienteEnderecoNumero" layoutX="384.0" layoutY="29.0" promptText="Número" />
+                                                <TextField fx:id="textFieldcadastroClienteEnderecoBairro" layoutX="10.0" layoutY="80.0" promptText="Bairro" />
+                                                <Label layoutX="10.0" layoutY="61.0" text="Bairro:" />
+                                                <Label layoutX="200.0" layoutY="61.0" text="Cidade" />
+                                                <TextField fx:id="textFieldcadastroClienteEnderecoCidade" layoutX="200.0" layoutY="80.0" promptText="Cidade" />
+                                             </children>
+                                          </Pane>
+                                          <Label layoutX="40.0" layoutY="106.0" text="Informações Pessoais:" />
+                                          <Label layoutX="40.0" layoutY="209.0" text="Contato:" />
+                                          <Label layoutX="40.0" layoutY="320.0" text="Endereço:" />
+                                          <HBox layoutX="40.0" layoutY="474.0" prefHeight="55.0" prefWidth="389.0" spacing="10.0">
+                                             <children>
+                                                <Button fx:id="botaoSalvarCadastroCliente" layoutX="39.0" layoutY="270.0" mnemonicParsing="false" onAction="#escolheMetodoSalvarOuEditarCliente" prefHeight="47.0" prefWidth="111.0" text="Salvar" />
+                                                <Button fx:id="botaoCancelarCadastroCliente" layoutX="117.0" layoutY="270.0" mnemonicParsing="false" onAction="#cancelarCadastroCliente" prefHeight="47.0" prefWidth="111.0" text="Cancelar" />
+                                                <Button fx:id="botaoLimparCadastroCliente" layoutX="200.0" layoutY="270.0" mnemonicParsing="false" onAction="#limparDadosTelaCadastroClientes" prefHeight="47.0" prefWidth="111.0" text="Limpar" />
+                                             </children>
+                                          </HBox>
+                                       </children>
+                                    </AnchorPane>
+                                 </items>
+                              </SplitPane>
+                           </content>
+                        </Tab>
+                        <Tab fx:id="AbaPagarDebito" text="Pagar Debito">
+                          <content>
+                            <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                                 <children>
+                                    <SplitPane fx:id="splitPagar" dividerPositions="0.48464619492656874" layoutY="-1.0" prefHeight="555.0" prefWidth="1500.0">
+                                      <items>
+                                        <AnchorPane fx:id="splitLeftPagar" minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="750.0">
+                                             <children>
+                                                <HBox layoutX="12.0" layoutY="43.0" prefHeight="64.0" prefWidth="706.0">
+                                                   <children>
+                                                      <TextField fx:id="TextFieldNomeClientePagar" prefHeight="29.0" prefWidth="566.0" promptText="Nome do Cliente" />
+                                                      <Button fx:id="botaoPesquisarClientePagarVenda" mnemonicParsing="false" onAction="#chamarIniciarTabelaVendaPagarDebito" prefHeight="33.0" prefWidth="116.0" text="Pesquisar" />
+                                                   </children>
+                                                </HBox>
+                                                <TableView fx:id="tabListaVendas" layoutX="14.0" layoutY="177.0" prefHeight="236.0" prefWidth="691.0">
+                                                  <columns>
+                                                    <TableColumn fx:id="colValorTotalVendaPagar" prefWidth="64.99996948242188" text="Total" />
+                                                      <TableColumn fx:id="colNumeroParcelasVendaPagar" prefWidth="117.0" text="Nº Parcelas" />
+                                                      <TableColumn fx:id="colValorParcelaVendaPagar" prefWidth="106.0" text="Valor Parcela" />
+                                                      <TableColumn fx:id="colDataCompraPagar" prefWidth="126.0" text="Data da Compra" />
+                                                      <TableColumn fx:id="colDataVencimentoProximaParcelaPagar" prefWidth="96.0" text="Vencimento" />
+                                                      <TableColumn fx:id="colSituacaoPagar" prefWidth="124.0" text="Situação" />
+                                                    <TableColumn fx:id="colIdVendaPagar" prefWidth="54.000030517578125" text="Id" />
+                                                  </columns>
+                                                </TableView>
+                                                <Label layoutX="14.0" layoutY="157.0" text="Tabela de Vendas:" />
+                                                <HBox layoutX="14.0" layoutY="428.0" prefHeight="55.0" prefWidth="394.0">
+                                                   <children>
+                                                      <Button fx:id="botaoIniciarPagamento" mnemonicParsing="false" onAction="#chamaIniciarPagamentoPeloBotao" prefHeight="47.0" prefWidth="111.0" text="Pagar">
+                                                         <HBox.margin>
+                                                            <Insets right="10.0" />
+                                                         </HBox.margin>
+                                                      </Button>
+                                                      <Button fx:id="BotaoFecharPagamento" mnemonicParsing="false" onAction="#fechaTelaPagamento" prefHeight="47.0" prefWidth="111.0" text="Fechar">
+                                                         <HBox.margin>
+                                                            <Insets right="10.0" />
+                                                         </HBox.margin>
+                                                      </Button>
+                                                      <Button fx:id="BotaoFecharPagamento1" layoutX="131.0" layoutY="10.0" mnemonicParsing="false" onAction="#limparTelaPagamento" prefHeight="47.0" prefWidth="111.0" text="Limpar" />
+                                                   </children>
+                                                </HBox>
+                                                <Label layoutX="14.0" layoutY="27.0" text="Nome do Cliente:" />
+                                             </children>
+                                          </AnchorPane>
+                                        <AnchorPane fx:id="splitRightPagar" minHeight="0.0" minWidth="0.0" prefHeight="239.0" prefWidth="750.0">
+                                             <children>
+                                                <VBox layoutX="15.0" layoutY="45.0" prefHeight="55.0" prefWidth="246.0">
+                                                   <children>
+                                                      <Label text="Número de Parcelas a pagar Agora:" />
+                                                      <ComboBox fx:id="ComboBoxNumeroParcelasPagar" prefHeight="26.0" prefWidth="231.0" promptText="Número de parcelas a pagar" />
+                                                   </children>
+                                                </VBox>
+                                                <VBox layoutX="14.0" layoutY="180.0" prefHeight="93.0" prefWidth="253.0">
+                                                   <children>
+                                                      <Label text="Vencimento da Próxima Parcela:" />
+                                                      <TextField fx:id="TexVenciProximaParcela" prefHeight="55.0" prefWidth="160.0">
+                                                         <font>
+                                                            <Font size="21.0" />
+                                                         </font>
+                                                         <VBox.margin>
+                                                            <Insets bottom="20.0" />
+                                                         </VBox.margin>
+                                                      </TextField>
+                                                   </children>
+                                                </VBox>
+                                                <HBox layoutX="14.0" layoutY="289.0" prefHeight="100.0" prefWidth="255.0">
+                                                   <children>
+                                                      <VBox prefHeight="100.0" prefWidth="131.0">
+                                                         <children>
+                                                            <Label text="Valor (R$):" />
+                                                            <TextField fx:id="TexTotVendPagar" prefHeight="55.0" prefWidth="160.0">
+                                                               <font>
+                                                                  <Font size="21.0" />
+                                                               </font>
+                                                               <VBox.margin>
+                                                                  <Insets bottom="20.0" />
+                                                               </VBox.margin>
+                                                            </TextField>
+                                                         </children>
+                                                         <padding>
+                                                            <Insets right="20.0" />
+                                                         </padding>
+                                                      </VBox>
+                                                      <VBox prefHeight="100.0" prefWidth="119.0">
+                                                         <children>
+                                                            <Label text="Desconto (R$):" />
+                                                            <TextField fx:id="TexDescVendPagar" prefHeight="55.0" prefWidth="162.0" promptText="Digite o valor do desconto">
+                                                               <font>
+                                                                  <Font size="21.0" />
+                                                               </font>
+                                                               <VBox.margin>
+                                                                  <Insets bottom="20.0" />
+                                                               </VBox.margin>
+                                                            </TextField>
+                                                         </children>
+                                                      </VBox>
+                                                   </children>
+                                                </HBox>
+                                                <VBox layoutX="363.0" layoutY="180.0" prefHeight="287.0" prefWidth="159.0">
+                                                   <children>
+                                                      <Label text="A pagar (R$):" />
+                                                      <TextField fx:id="TextPagVendPagar" prefHeight="55.0" prefWidth="162.0">
+                                                         <font>
+                                                            <Font name="System Bold" size="21.0" />
+                                                         </font>
+                                                         <VBox.margin>
+                                                            <Insets bottom="20.0" />
+                                                         </VBox.margin>
+                                                      </TextField>
+                                                      <Label text="Valor Recebido (R$):" />
+                                                      <TextField fx:id="TextRecebidoVendPagar" prefHeight="55.0" prefWidth="162.0" promptText="Digite o valor recebido">
+                                                         <font>
+                                                            <Font name="System Bold" size="21.0" />
+                                                         </font>
+                                                         <VBox.margin>
+                                                            <Insets bottom="20.0" />
+                                                         </VBox.margin>
+                                                      </TextField>
+                                                      <Label text="Troco(R$):" />
+                                                      <TextField fx:id="TextTrocoVendPagar" prefHeight="55.0" prefWidth="162.0">
+                                                         <font>
+                                                            <Font name="System Bold" size="21.0" />
+                                                         </font>
+                                                      </TextField>
+                                                   </children>
+                                                </VBox>
+                                                <HBox layoutX="15.0" layoutY="428.0" prefHeight="55.0" prefWidth="319.0">
+                                                   <children>
+                                                      <Button fx:id="ButtonPagar" mnemonicParsing="false" onAction="#realizarPagamento" prefHeight="47.0" prefWidth="155.0" text="Realizar Pagamento">
+                                                         <HBox.margin>
+                                                            <Insets right="10.0" />
+                                                         </HBox.margin>
+                                                      </Button>
+                                                      <Button fx:id="ButtonCancelar" mnemonicParsing="false" onAction="#cancelarIniciarPagamento" prefHeight="47.0" prefWidth="111.0" text="Cancelar">
+                                                         <HBox.margin>
+                                                            <Insets right="10.0" />
+                                                         </HBox.margin>
+                                                      </Button>
+                                                   </children>
+                                                </HBox>
+                                             </children>
+                                          </AnchorPane>
+                                      </items>
+                                    </SplitPane>
+                                 </children>
+                              </AnchorPane>
+                          </content>
+                        </Tab>
+                        <Tab fx:id="AbaConfig" text="Configurações">
+                           <content>
+                              <SplitPane prefHeight="200.0" prefWidth="200.0">
+                                 <items>
+                                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                                       <children>
+                                          <VBox layoutX="31.0" layoutY="14.0" prefHeight="377.0" prefWidth="530.0">
+                                             <children>
+                                                <Label text="Nome da Empresa:" />
+                                                <TextField fx:id="TextFieldConfiguraNome" prefHeight="29.0" prefWidth="530.0" promptText="Nome da Empresa">
+                                                   <VBox.margin>
+                                                      <Insets bottom="20.0" />
+                                                   </VBox.margin>
+                                                </TextField>
+                                                <Label text="Nova Senha:" />
+                                                <PasswordField fx:id="TextFieldConfiguraSenha" prefHeight="29.0" prefWidth="530.0" promptText="Nova Senha">
+                                                   <VBox.margin>
+                                                      <Insets bottom="20.0" />
+                                                   </VBox.margin>
+                                                </PasswordField>
+                                                <Label text="Confirma Nova Senha:" />
+                                                <PasswordField fx:id="TextFieldConfiguraConfirmaSenha" prefHeight="29.0" prefWidth="530.0" promptText="Confirmar Nova Senha">
+                                                   <VBox.margin>
+                                                      <Insets bottom="20.0" />
+                                                   </VBox.margin>
+                                                </PasswordField>
+                                                <Label text="Senha Atual:" />
+                                                <PasswordField fx:id="TextFieldConfiguraConfirmaSenhaAtual" prefHeight="29.0" prefWidth="530.0" promptText="Senha Atual">
+                                                   <VBox.margin>
+                                                      <Insets bottom="20.0" />
+                                                   </VBox.margin>
+                                                </PasswordField>
+                                                <HBox prefHeight="100.0" prefWidth="200.0">
+                                                   <children>
+                                                      <Button fx:id="boaoSalvarConfig" mnemonicParsing="false" prefHeight="47.0" prefWidth="111.0" text="Salvar" />
+                                                      <Button fx:id="botaoCancelarConfig" mnemonicParsing="false" onAction="#fechaConfig" prefHeight="47.0" prefWidth="111.0" text="Cancelar">
+                                                         <HBox.margin>
+                                                            <Insets left="10.0" right="10.0" />
+                                                         </HBox.margin>
+                                                      </Button>
+                                                   </children>
+                                                </HBox>
+                                             </children>
+                                          </VBox>
+                                       </children>
+                                    </AnchorPane>
+                                 </items>
+                              </SplitPane>
+                           </content>
+                        </Tab>
+                          </tabs>
+                      </TabPane>
+                  </children>
+              </AnchorPane>
+         </children>
+      </AnchorPane>
+   </children>
+</VBox>
